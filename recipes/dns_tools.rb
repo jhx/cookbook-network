@@ -29,4 +29,4 @@ package 'dns' do
     package_name 'dnsutils'
   end # case
   action :install
-end # package 'dnsutils' do
+end # package

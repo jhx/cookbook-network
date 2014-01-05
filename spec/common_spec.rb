@@ -13,6 +13,6 @@ describe 'network::common' do
     expect(chef_run).to_not restart_service('network')
     expect(chef_run).to_not start_service('network')
     expect(chef_run).to_not stop_service('network')
-  end # it 'should provide network resource (action: nothing)'
+  end # it
 
-end # describe 'network::common'
+end # describe

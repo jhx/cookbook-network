@@ -12,10 +12,10 @@ describe 'network::default' do
 
   it 'should include recipe network::hosts' do
     chef_run.should include_recipe 'network::hosts'
-  end # it 'should include recipe network::hosts'
+  end # it
 
   it 'should include recipe network::network' do
     chef_run.should include_recipe 'network::network'
-  end # it 'should include recipe network::network'
+  end # it
 
-end # describe 'network::default'
+end # describe

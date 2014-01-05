@@ -31,4 +31,4 @@ template '/etc/sysconfig/network' do |t|
   )
   notifies  :restart, 'service[network]'
   action  :create
-end # template '/etc/sysconfig/network'
+end # template
