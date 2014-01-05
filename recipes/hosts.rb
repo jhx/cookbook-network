@@ -32,4 +32,4 @@ template '/etc/hosts' do |t|
   )
   notifies  :restart, 'service[network]'
   action  :create
-end # template '/etc/hosts'
+end # template

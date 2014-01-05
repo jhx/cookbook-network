@@ -1,23 +1,21 @@
-require 'chefspec'
-require 'fauxhai'
+require 'spec_helper'
 
 describe 'network::default' do
-  before do
-    Fauxhai.mock do |node|
-      node['file'] = {
+  let(:chef_run) do
+    ChefSpec::Runner.new do |node|
+      # override cookbook attributes
+      node.set['file'] = {
         'header' => 'node.file.header'
       }
-    end # Fauxhai.mock
-  end # before
-  
-  let (:chef_run) { ChefSpec::ChefRunner.new.converge 'network::default' }
-  
+    end.converge(described_recipe)
+  end # let
+
   it 'should include recipe network::hosts' do
-    chef_run.should include_recipe 'network::hosts'
-  end # it 'should include recipe network::hosts'
-  
+    expect(chef_run).to include_recipe('network::hosts')
+  end # it
+
   it 'should include recipe network::network' do
-    chef_run.should include_recipe 'network::network'
-  end # it 'should include recipe network::network'
-  
-end # describe 'network::default'
+    expect(chef_run).to include_recipe('network::network')
+  end # it
+
+end # describe

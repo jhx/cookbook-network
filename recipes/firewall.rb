@@ -65,7 +65,7 @@ node['network']['firewall'].each do |port|
     rule "-m state --state NEW -m tcp -p tcp --dport #{port}"
     jump 'ACCEPT'
   end # simple_iptables_rule
-end # node['network']['firewall'].each
+end # .each
 
 # reject all other inbound packets with icmp-host-prohibited message
 simple_iptables_rule 'RH-Firewall-1-INPUT' do

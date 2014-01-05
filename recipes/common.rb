@@ -21,4 +21,4 @@
 
 service 'network' do
   action :nothing
-end # service 'network'
+end # service
