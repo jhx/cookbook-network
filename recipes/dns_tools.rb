@@ -22,7 +22,7 @@
 include_recipe 'network::common'
 
 package 'dns' do
-  case node[:platform]
+  case node['platform']
   when 'centos', 'redhat', 'suse', 'fedora'
     package_name 'bind-utils'
   when 'debian', 'ubuntu'
