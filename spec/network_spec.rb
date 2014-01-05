@@ -11,7 +11,7 @@ describe 'network::network' do
   end # let
 
   it 'should include recipe network::common' do
-    chef_run.should include_recipe 'network::common'
+    expect(chef_run).to include_recipe('network::common')
   end # it
 
   it 'should create /etc/sysconfig/network owned by root:root' do

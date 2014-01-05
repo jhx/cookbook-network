@@ -11,11 +11,11 @@ describe 'network::default' do
   end # let
 
   it 'should include recipe network::hosts' do
-    chef_run.should include_recipe 'network::hosts'
+    expect(chef_run).to include_recipe('network::hosts')
   end # it
 
   it 'should include recipe network::network' do
-    chef_run.should include_recipe 'network::network'
+    expect(chef_run).to include_recipe('network::network')
   end # it
 
 end # describe
