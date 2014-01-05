@@ -16,7 +16,7 @@ describe 'network::hosts' do
 
   it 'should create /etc/hosts owned by root:wheel' do
     file = '/etc/hosts'
-    chef_run.should create_file_with_content file, 'node.file.header'
+    expect(chef_run).to render_file(file).with_content('node.file.header')
     expect(chef_run.template(file).owner).to eq('root')
     expect(chef_run.template(file).group).to eq('root')
   end # it 'should create /etc/hosts owned by root:wheel'
