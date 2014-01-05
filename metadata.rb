@@ -1,3 +1,4 @@
+# coding: utf-8
 name              'network'
 version           '0.3.1'
 
