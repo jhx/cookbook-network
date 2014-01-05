@@ -1,3 +1,4 @@
+# coding: utf-8
 #
 # Cookbook Name:: network
 # Recipe:: network
@@ -26,8 +27,8 @@ template '/etc/sysconfig/network' do |t|
   group   'root'
   mode    '0644'
   variables(
-    :header => node['file']['header'].gsub('@filename', t.name).
-      gsub('@hostname', node['hostname'])
+    :header => node['file']['header'].gsub('@filename', t.name)
+      .gsub('@hostname', node['hostname'])
   )
   notifies  :restart, 'service[network]'
   action  :create
