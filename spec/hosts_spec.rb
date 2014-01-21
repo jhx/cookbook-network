@@ -11,11 +11,11 @@ describe 'network::hosts' do
     end.converge(described_recipe)
   end # let
 
-  it 'should include recipe network::common' do
+  it 'includes recipe network::common' do
     expect(chef_run).to include_recipe('network::common')
   end # it
 
-  it 'should create /etc/hosts owned by root:wheel' do
+  it 'creates /etc/hosts owned by root:wheel' do
     file = '/etc/hosts'
     expect(chef_run).to create_template(file)
       .with(:owner => 'root', :group => 'root')
