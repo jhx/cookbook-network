@@ -4,7 +4,7 @@ require 'spec_helper'
 describe 'network::common' do
   let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
 
-  it 'should provide network resource (action: nothing)' do
+  it 'provides network resource (action: nothing)' do
     # work around chefspec's inability to verify action :nothing
     # would prefer to use the following:
     #   expect(chef_run).to nothing_service('network')
