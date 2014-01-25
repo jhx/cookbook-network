@@ -4,15 +4,15 @@ require 'spec_helper'
 describe 'network::firewall' do
   context iptables do
     it 'drops INPUT packets' do
-      expect(subject).to have_rule('-P INPUT DROP')
+      expect(subject).to have_rule('INPUT DROP')
     end # it
 
     it 'drops FORWARD packets' do
-      expect(subject).to have_rule('-P FORWARD DROP')
+      expect(subject).to have_rule('FORWARD DROP')
     end # it
 
     it 'accepts OUTPUT packets' do
-      expect(subject).to have_rule('-P OUTPUT ACCEPT')
+      expect(subject).to have_rule('OUTPUT ACCEPT')
     end # it
 
     it "drops packets from TCP sessions that don't begin with SYN" do
