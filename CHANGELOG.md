@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-TBD
+0.4.0 / 2014-01-25
 ------------------
 
 - `NEW` add emeril gem to publish cookbook | [#46][]
@@ -19,8 +19,20 @@ TBD
 - `NEW` add cookbook lint checks (via foodcritic), fix flagged items | [#11][] [#12][]
 - `NEW` add specification files for ruby version | [#10][]
 
-``
-0.1.0 / 2013-01-26
+
+0.3.1 / 2013-02-08
+------------------
+
+- `IMPROVE` update firewall recipe to reject other inbound packets
+
+
+0.3.0 / 2013-02-07
+------------------
+
+- `NEW` add `network::firewall` recipe
+
+
+0.2.0 / 2013-01-26
 ------------------
 
 - `NEW` initial release
