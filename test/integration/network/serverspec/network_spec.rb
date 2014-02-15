@@ -19,16 +19,16 @@ describe 'network::network' do
       expect(subject).to be_mode(644)
     end # it
 
-    it 'matches expected file header' do
-      expect(subject.content).to match('# fake')
+    it 'includes expected file header' do
+      expect(subject.content).to include('# fake')
     end # it
 
-    it 'matches expected NETWORKING' do
-      expect(subject.content).to match('NETWORKING=yes')
+    it 'includes expected NETWORKING' do
+      expect(subject.content).to include('NETWORKING=yes')
     end # it
 
-    it 'matches expected NETWORKING_IPV6' do
-      expect(subject.content).to match('NETWORKING_IPV6=no')
+    it 'includes expected NETWORKING_IPV6' do
+      expect(subject.content).to include('NETWORKING_IPV6=no')
     end # it
   end # describe
 end # describe

@@ -19,8 +19,8 @@ describe 'network::hosts' do
       expect(subject).to be_mode(644)
     end # it
 
-    it 'matches expected file header' do
-      expect(subject.content).to match('# fake')
+    it 'includes expected file header' do
+      expect(subject.content).to include('# fake')
     end # it
   end # describe
 end # describe
