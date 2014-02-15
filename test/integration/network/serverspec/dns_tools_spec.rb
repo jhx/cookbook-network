@@ -1,19 +1,22 @@
 # coding: utf-8
 require 'spec_helper'
 
-# TODO: make this platform_family-specific
 describe 'network::dns_tools' do
-  # rhel
-  describe package('bind-utils') do
-    it 'is installed' do
-      expect(subject).to be_installed
-    end # it
-  end # describe
+  os = backend(Serverspec::Commands::Base).check_os
 
-  # # debian
-  # describe package('dnsutils') do
-  #   it 'is installed' do
-  #     expect(subject).to be_installed
-  #   end # it
-  # end # describe
+  case os[:family]
+  when 'RedHat'
+    describe package('bind-utils') do
+      it 'is installed' do
+        expect(subject).to be_installed
+      end # it
+    end # describe
+  when 'Debian'
+    describe package('dnsutils') do
+      it 'is installed' do
+        expect(subject).to be_installed
+      end # it
+    end # describe
+  end # case
+
 end # describe
