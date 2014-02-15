@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 describe 'network::hosts' do
-  context file('/etc/hosts') do
+  describe file('/etc/hosts') do
     it 'is file' do
       expect(subject).to be_file
     end # it
@@ -22,5 +22,5 @@ describe 'network::hosts' do
     it 'matches expected file header' do
       expect(subject.content).to match('# fake')
     end # it
-  end # context
+  end # describe
 end # describe
