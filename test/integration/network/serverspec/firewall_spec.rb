@@ -16,7 +16,7 @@ describe 'network::firewall' do
     end # it
 
     it "drops packets from TCP sessions that don't begin with SYN" do
-      expect(subject).to have_rule('-p tcp -m tcp ! ' +
+      expect(subject).to have_rule('-p tcp -m tcp ! ' \
         '--tcp-flags FIN,SYN,RST,ACK SYN -m state --state NEW -j DROP')
     end # it
 
@@ -34,7 +34,7 @@ describe 'network::firewall' do
     end # it
 
     it 'accepts packets on port 22 (ssh)' do
-      expect(subject).to have_rule('-p tcp -m state --state NEW ' +
+      expect(subject).to have_rule('-p tcp -m state --state NEW ' \
         '-m tcp --dport 22 -j ACCEPT')
     end # it
 
