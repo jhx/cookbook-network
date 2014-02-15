@@ -5,9 +5,7 @@ describe 'network::hosts' do
   let(:chef_run) do
     ChefSpec::Runner.new do |node|
       # override cookbook attributes
-      node.set['file'] = {
-        'header' => 'node.file.header'
-      }
+      node.set['file']['header'] = 'node.file.header'
     end.converge(described_recipe)
   end # let
 
