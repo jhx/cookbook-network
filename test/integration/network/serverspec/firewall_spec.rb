@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 describe 'network::firewall' do
-  context iptables do
+  describe iptables do
     it 'drops INPUT packets' do
       expect(subject).to have_rule('INPUT DROP')
     end # it
@@ -42,5 +42,5 @@ describe 'network::firewall' do
       expect(subject)
         .to have_rule('-j REJECT --reject-with icmp-host-prohibited')
     end # it
-  end # context
+  end # describe
 end # describe

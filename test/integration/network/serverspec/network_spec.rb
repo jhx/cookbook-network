@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 describe 'network::network' do
-  context file('/etc/sysconfig/network') do
+  describe file('/etc/sysconfig/network') do
     it 'is file' do
       expect(subject).to be_file
     end # it
@@ -30,5 +30,5 @@ describe 'network::network' do
     it 'matches expected NETWORKING_IPV6' do
       expect(subject.content).to match('NETWORKING_IPV6=no')
     end # it
-  end # context
+  end # describe
 end # describe
