@@ -1,6 +1,7 @@
 network Cookbook
 ================
 [![Build Status](https://travis-ci.org/jhx/cookbook-network.png?branch=master)](https://travis-ci.org/jhx/cookbook-network)
+[![Dependency Status](https://gemnasium.com/jhx/cookbook-network.png)](https://gemnasium.com/jhx/cookbook-network)
 
 Configures network.
 
