@@ -9,19 +9,26 @@ describe 'network::hosts' do
     end.converge(described_recipe)
   end # let
 
-  it 'includes recipe network::common' do
-    expect(chef_run).to include_recipe('network::common')
-  end # it
+  describe 'network::common' do
+    it 'includes described recipe' do
+      expect(chef_run).to include_recipe(subject)
+    end # it
+  end # describe
 
   describe '/etc/hosts' do
-    it 'creates template with expected owner, group' do
+    it 'creates template with expected owner, group, mode' do
       expect(chef_run).to create_template(subject)
-        .with(:owner => 'root', :group => 'root')
+        .with(:owner => 'root', :group => 'root', :mode => '0644')
     end # it
 
     it 'renders file with expected header' do
       expect(chef_run).to render_file(subject)
         .with_content('node.file.header')
+    end # it
+
+    it 'notifies resource with expected action' do
+      resource = chef_run.template(subject)
+      expect(resource).to notify('service[network]').to(:restart).delayed
     end # it
   end # describe
 

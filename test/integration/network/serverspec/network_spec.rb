@@ -31,4 +31,5 @@ describe 'network::network' do
       expect(subject.content).to include('NETWORKING_IPV6=no')
     end # it
   end # describe
+
 end # describe
