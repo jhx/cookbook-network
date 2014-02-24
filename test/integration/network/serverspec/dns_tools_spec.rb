@@ -2,21 +2,16 @@
 require 'spec_helper'
 
 describe 'network::dns_tools' do
-  os = backend(Serverspec::Commands::Base).check_os
+  describe package('bind-utils'), :if => os?(:rhel) do
+    it 'is installed' do
+      expect(subject).to be_installed
+    end # it
+  end # describe
 
-  case os[:family]
-  when 'RedHat'
-    describe package('bind-utils') do
-      it 'is installed' do
-        expect(subject).to be_installed
-      end # it
-    end # describe
-  when 'Debian'
-    describe package('dnsutils') do
-      it 'is installed' do
-        expect(subject).to be_installed
-      end # it
-    end # describe
-  end # case
+  describe package('dnsutils'), :if => os?(:debian) do
+    it 'is installed' do
+      expect(subject).to be_installed
+    end # it
+  end # describe
 
 end # describe
