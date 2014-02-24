@@ -9,12 +9,16 @@ describe 'network::default' do
     end.converge(described_recipe)
   end # let
 
-  it 'includes recipe network::hosts' do
-    expect(chef_run).to include_recipe('network::hosts')
-  end # it
+  describe 'network::hosts' do
+    it 'includes described recipe' do
+      expect(chef_run).to include_recipe(subject)
+    end # it
+  end # describe
 
-  it 'includes recipe network::network' do
-    expect(chef_run).to include_recipe('network::network')
-  end # it
+  describe 'network::network' do
+    it 'includes described recipe' do
+      expect(chef_run).to include_recipe(subject)
+    end # it
+  end # describe
 
 end # describe
