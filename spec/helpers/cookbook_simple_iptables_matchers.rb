@@ -1,6 +1,7 @@
 # encoding: utf-8
+
+# cookbook:: simple_iptables
 if defined?(ChefSpec)
-  # cookbook:: simple_iptables
   # rubocop:disable AccessorMethodName
   def set_iptables_chain(resource_name)
     ChefSpec::Matchers::ResourceMatcher
@@ -8,7 +9,6 @@ if defined?(ChefSpec)
   end # def
   # rubocop:enable AccessorMethodName
 
-  # cookbook:: simple_iptables
   def append_iptables_rule(resource_name)
     ChefSpec::Matchers::ResourceMatcher
       .new(:simple_iptables_rule, :append, resource_name)
