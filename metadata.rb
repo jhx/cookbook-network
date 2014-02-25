@@ -1,4 +1,4 @@
-# coding: utf-8
+# encoding: utf-8
 name              'network'
 version           '0.4.0'
 
