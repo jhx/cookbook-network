@@ -23,14 +23,14 @@
 include_recipe 'network::common'
 
 template '/etc/hosts' do |t|
-  owner   'root'
-  group   'root'
-  mode    '0644'
+  owner     'root'
+  group     'root'
+  mode      '0644'
   variables(
     :header => node['file']['header'].gsub('@filename', t.name)
       .gsub('@hostname', node['hostname']),
     :hosts => node['network']['hosts']
   )
   notifies  :restart, 'service[network]'
-  action  :create
+  action    :create
 end # template
