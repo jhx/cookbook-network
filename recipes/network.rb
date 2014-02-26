@@ -23,13 +23,13 @@
 include_recipe 'network::common'
 
 template '/etc/sysconfig/network' do |t|
-  owner   'root'
-  group   'root'
-  mode    '0644'
+  owner     'root'
+  group     'root'
+  mode      '0644'
   variables(
     :header => node['file']['header'].gsub('@filename', t.name)
       .gsub('@hostname', node['hostname'])
   )
   notifies  :restart, 'service[network]'
-  action  :create
+  action    :create
 end # template
