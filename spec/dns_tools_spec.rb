@@ -23,16 +23,18 @@ describe 'network::dns_tools' do
         end # it
       end # describe
 
-      it 'installs expected package' do
-        case chef_run.node['platform_family']
-        when 'rhel'
-          expect(chef_run).to install_package('dns')
-            .with_package_name('bind-utils')
-        when 'debian'
-          expect(chef_run).to install_package('dns')
-            .with_package_name('dnsutils')
-        end # case
-      end # it
+      describe 'dns' do
+        it 'installs described package' do
+          case chef_run.node['platform_family']
+          when 'rhel'
+            expect(chef_run).to install_package(subject)
+              .with_package_name('bind-utils')
+          when 'debian'
+            expect(chef_run).to install_package(subject)
+              .with_package_name('dnsutils')
+          end # case
+        end # it
+      end # describe
 
     end # context
   end # [...].each
