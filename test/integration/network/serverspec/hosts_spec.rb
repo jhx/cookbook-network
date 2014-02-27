@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe 'network::hosts' do
   describe file('/etc/hosts') do
-    it 'is file' do
+    it 'is a file' do
       expect(subject).to be_file
     end # it
 
