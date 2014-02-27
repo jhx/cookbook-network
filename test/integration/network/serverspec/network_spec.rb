@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe 'network::network' do
   describe file('/etc/sysconfig/network') do
-    it 'is file' do
+    it 'is a file' do
       expect(subject).to be_file
     end # it
 
