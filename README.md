@@ -11,7 +11,7 @@ Requirements
 ### Cookbooks
 The following cookbook is a direct dependency because it's used for common "default" functionality.
 
-- `simple_iptables` (for `network::firewall`)
+- [`simple_iptables`](https://github.com/rtkwlf/cookbook-simple-iptables) (for `network::firewall`)
 
 ### Platforms
 The following platforms are supported and tested under Test Kitchen:
