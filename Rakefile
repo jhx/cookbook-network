@@ -32,7 +32,7 @@ end # task
 
 namespace :foodcritic do
   task :default do
-    sh 'bundle exec foodcritic -t ~FC047 -I spec/foodcritic/* -f any .'
+    sh 'bundle exec foodcritic -I spec/foodcritic/* -f any .'
   end # task
 
   desc 'Updates 3rd-party foodcritic rules.'
