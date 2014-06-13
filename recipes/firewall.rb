@@ -52,9 +52,9 @@ end # simple_iptables_rule
 simple_iptables_rule 'accept_icmp' do
   chain 'RH-Firewall-1-INPUT'
   rule  [
-      '-p icmp --icmp-type 8',
-      '-p icmp --icmp-type 11'
-    ]
+    '-p icmp --icmp-type 8',
+    '-p icmp --icmp-type 11'
+  ]
   jump  'ACCEPT'
 end # simple_iptables_rule
 
